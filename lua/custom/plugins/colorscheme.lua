@@ -1,3 +1,4 @@
+--[[
 return {
   { -- You can easily change to a different colorscheme.
     -- Change the name of the colorscheme plugin below, and then
@@ -17,4 +18,28 @@ return {
     end,
   },
 }
+--]]
+
+return {
+  {
+    'neanias/everforest-nvim',
+    version = false,
+    lazy = false,
+    priority = 1000, -- make sure to load this before all the other start plugins
+    -- Optional; default configuration will be used if setup isn't called.
+    config = function()
+      require('everforest').setup {
+        -- Your config here
+        background = 'hard',
+        italics = true,
+        -- sign_column_background = 'grey',
+        -- ui_contrast = 'high',
+      }
+    end,
+    init = function()
+      vim.cmd.colorscheme 'everforest'
+    end,
+  },
+}
+
 -- vim: ts=2 sts=2 sw=2 et
