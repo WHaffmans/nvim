@@ -46,4 +46,6 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 })
 
 vim.keymap.set('i', 'jk', '<Esc>:w<CR>')
+vim.keymap.set('n', '<leader>Z', ':ZenMode<CR>', { desc = 'Open ZenMode' })
+
 -- vim: ts=2 sts=2 sw=2 et
